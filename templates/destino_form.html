@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Destino</title>
+     <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input { width: 100%; padding: 8px; box-sizing: border-box; }
+        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Adicionar Novo Destino</h1>
+        <form method="post">
+            <div class="form-group"><label>Sigla:</label><input type="text" name="sigla" required></div>
+            <div class="form-group"><label>Nome do Recebedor:</label><input type="text" name="nome_recebedor" required></div>
+            <div class="form-group"><label>CNPJ do Recebedor:</label><input type="text" name="cnpj_recebedor"></div>
+            <div class="form-group"><label>Endereço do Recebedor:</label><input type="text" name="endereco_recebedor"></div>
+            <div class="form-group"><label>Cidade do Recebedor:</label><input type="text" name="cidade_recebedor"></div>
+            <div class="form-group"><label>UF do Recebedor:</label><input type="text" name="uf_recebedor"></div>
+            <div class="form-group"><label>CEP do Recebedor:</label><input type="text" name="cep_recebedor"></div>
+            <div class="form-group"><label>País do Recebedor:</label><input type="text" name="pais_recebedor"></div>
+            <button type="submit">Salvar Destino</button>
+        </form>
+        <p><a href="/admin">Cancelar e Voltar</a></p>
+    </div>
+</body>
+</html>

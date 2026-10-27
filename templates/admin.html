@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciar Destinos</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; word-break: break-word; }
+        th { background-color: #f2f2f2; }
+        .actions a { margin-right: 10px; text-decoration: none; }
+        .add-button { display: inline-block; padding: 10px 15px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Gerenciar Destinos</h1>
+    <a href="/add" class="add-button">Adicionar Novo Destino</a>
+    <a href="/">Voltar para Gerar Etiquetas</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Sigla</th>
+                <th>Nome do Recebedor</th>
+                <th>CNPJ</th>
+                <th>Endereço</th>
+                <th>Cidade</th>
+                <th>UF</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sigla, dados in destinos.items() %}
+            <tr>
+                <td>{{ sigla }}</td>
+                <td>{{ dados.nome_recebedor }}</td>
+                <td>{{ dados.cnpj_recebedor }}</td>
+                <td>{{ dados.endereco_recebedor }}</td>
+                <td>{{ dados.cidade_recebedor }}</td>
+                <td>{{ dados.uf_recebedor }}</td>
+                <td class="actions">
+                    <a href="/delete/{{ sigla }}" onclick="return confirm('Tem certeza que deseja deletar {{ sigla }}?');">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
